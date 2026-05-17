@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,8 +25,6 @@ const social = [
 
 export default function AboutPage() {
   return (
-    <>
-      <Navbar />
       <main className="pt-[68px] bg-cream">
         <div className="bg-navy relative overflow-hidden">
           <div className="absolute -top-20 -right-20 w-[360px] h-[360px] border border-gold/10 rounded-full pointer-events-none" />
@@ -118,7 +114,5 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

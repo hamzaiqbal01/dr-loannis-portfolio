@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { procedures, getProcedure } from "@/lib/procedures-data";
 import type { Metadata } from "next";
 
@@ -41,9 +39,6 @@ export default async function ProcedureDetailPage({
   const next = procedures[currentIdx + 1];
 
   return (
-    <>
-      <Navbar />
-
       <main className="pt-[68px]">
         {/* ── Hero ── */}
         <div className="bg-navy relative overflow-hidden">
@@ -212,8 +207,5 @@ export default async function ProcedureDetailPage({
           </div>
         </div>
       </main>
-
-      <Footer />
-    </>
   );
 }

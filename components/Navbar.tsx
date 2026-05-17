@@ -16,14 +16,14 @@ const procedureLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen]         = useState(false);
   const [procOpen, setProcOpen]         = useState(false);
-  const [mobileProcOpen, setMobileProcOpen] = useState(false);
+  const [mobileProcOpen, setMobileProcOpen] = useState(true);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openProc  = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setProcOpen(true); };
   const closeProc = () => { closeTimer.current = setTimeout(() => setProcOpen(false), 130); };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center justify-between px-8 md:px-12 bg-cream/96 backdrop-blur-sm border-b border-navy/12">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center justify-between px-8 lg:px-12 bg-cream/96 backdrop-blur-sm border-b border-navy/12">
 
       {/* ── Logo ── */}
       <Link href="/" className="font-serif text-[20px] font-semibold text-navy tracking-[0.02em] leading-[1.2] no-underline">
@@ -34,7 +34,7 @@ export default function Navbar() {
       </Link>
 
       {/* ── Desktop links ── */}
-      <ul className="hidden md:flex gap-8 list-none items-center">
+      <ul className="hidden lg:flex gap-8 list-none items-center">
         <li>
           <Link href="/" className="text-muted text-[13px] tracking-[0.06em] uppercase font-medium no-underline hover:text-navy transition-colors duration-200">
             Home
@@ -132,15 +132,19 @@ export default function Navbar() {
       {/* ── Desktop CTA ── */}
       <Link
         href="/contact"
-        className="hidden md:inline-flex items-center justify-center bg-navy text-white px-[22px] py-[9px] rounded-[2px] text-[12px] tracking-widest uppercase font-medium no-underline hover:bg-navy-mid transition-colors duration-200"
+        className="hidden lg:inline-flex items-center justify-center bg-navy text-white px-[22px] py-[9px] rounded-[2px] text-[12px] tracking-widest uppercase font-medium no-underline hover:bg-navy-mid transition-colors duration-200"
       >
         Contact Us
       </Link>
 
       {/* ── Mobile hamburger ── */}
       <button
-        className="md:hidden flex flex-col justify-center gap-[5px] p-2"
-        onClick={() => setMenuOpen(!menuOpen)}
+        className="lg:hidden flex flex-col justify-center gap-[5px] p-2"
+        onClick={() => {
+          const next = !menuOpen;
+          setMenuOpen(next);
+          if (next) setMobileProcOpen(true);
+        }}
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
       >
@@ -151,7 +155,7 @@ export default function Navbar() {
 
       {/* ── Mobile menu ── */}
       {menuOpen && (
-        <div className="absolute top-[68px] left-0 right-0 bg-cream border-b border-navy/12 flex flex-col md:hidden shadow-sm">
+        <div className="absolute top-[68px] left-0 right-0 bg-cream border-b border-navy/12 flex flex-col lg:hidden shadow-sm">
           <div className="flex flex-col gap-1 p-6">
             <Link
               href="/"

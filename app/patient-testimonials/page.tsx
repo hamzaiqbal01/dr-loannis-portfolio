@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,8 +9,6 @@ export const metadata: Metadata = {
 
 export default function PatientTestimonialsPage() {
   return (
-    <>
-      <Navbar />
       <main className="pt-[68px] bg-cream min-h-[70vh]">
         <div className="max-w-[860px] mx-auto px-6 md:px-12 py-20">
           <div className="flex items-center gap-2.5 text-[10px] tracking-[0.2em] uppercase text-gold font-medium mb-4">
@@ -78,7 +74,5 @@ export default function PatientTestimonialsPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

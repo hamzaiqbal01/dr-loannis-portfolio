@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { procedures } from "@/lib/procedures-data";
 import type { Metadata } from "next";
 
@@ -13,9 +11,6 @@ export const metadata: Metadata = {
 
 export default function ProceduresPage() {
   return (
-    <>
-      <Navbar />
-
       <main className="pt-[68px]">
         {/* ── Hero ── */}
         <div className="bg-navy relative overflow-hidden py-20 px-6">
@@ -145,8 +140,5 @@ export default function ProceduresPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </>
   );
 }

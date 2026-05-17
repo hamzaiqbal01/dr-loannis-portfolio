@@ -125,6 +125,7 @@ export default function Contact() {
                 placeholder={placeholder}
                 value={form[name]}
                 onChange={handleChange}
+                suppressHydrationWarning
                 className="w-full px-4 py-3 border border-navy/[0.12] rounded-[2px] bg-white font-sans text-[14px] text-[#1a1a1a] placeholder:text-muted/60 outline-none focus:border-gold transition-colors duration-200"
               />
             ))}
@@ -134,11 +135,13 @@ export default function Contact() {
               value={form.message}
               onChange={handleChange}
               rows={5}
+              suppressHydrationWarning
               className="w-full px-4 py-3 border border-navy/[0.12] rounded-[2px] bg-white font-sans text-[14px] text-[#1a1a1a] placeholder:text-muted/60 outline-none focus:border-gold transition-colors duration-200 resize-y min-h-[120px]"
             />
             <div>
               <button
                 type="submit"
+                suppressHydrationWarning
                 className="bg-navy text-white px-7 py-3.5 rounded-[2px] text-[12px] tracking-[0.1em] uppercase font-medium hover:bg-navy-mid transition-colors duration-200 cursor-pointer border-none"
               >
                 Send Message
