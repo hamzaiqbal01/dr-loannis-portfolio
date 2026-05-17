@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0b1f3a;
+  --color-navy-mid: #1a3a5c;
+  --color-gold: #b8965a;
+  --color-gold-light: #d4af78;
+  --color-cream: #f9f6f1;
+  --color-cream-deep: #f2ede5;
+  --color-muted: #5a5a5a;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f6f1;
+  color: #1a1a1a;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Hero staggered fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate > * {
+  animation: fadeUp 0.7s ease both;
+}
+.hero-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-animate > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-animate > *:nth-child(3) { animation-delay: 0.3s; }
+.hero-animate > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-animate > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* 3D badge floating animations */
+@keyframes floatUp {
+  0%, 100% { transform: translateZ(36px) translateY(0px); }
+  50%       { transform: translateZ(36px) translateY(-7px); }
+}
+@keyframes floatDown {
+  0%, 100% { transform: translateZ(28px) translateY(0px); }
+  50%       { transform: translateZ(28px) translateY(7px); }
+}
+@keyframes floatSide {
+  0%, 100% { transform: translateZ(22px) translateY(-50%) translateX(0px); }
+  50%       { transform: translateZ(22px) translateY(-50%) translateX(4px); }
+}
+.badge-float-up   { animation: floatUp   3.2s ease-in-out infinite; }
+.badge-float-down { animation: floatDown 3.8s ease-in-out infinite; }
+.badge-float-side { animation: floatSide 4s   ease-in-out infinite; }
