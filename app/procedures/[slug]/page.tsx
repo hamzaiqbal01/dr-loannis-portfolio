@@ -76,9 +76,11 @@ export default async function ProcedureDetailPage({
                 <h1 className="font-serif text-[44px] sm:text-[56px] leading-[1.08] font-medium text-white mb-5">
                   {proc.title}
                 </h1>
-                <p className="text-white/60 text-[15px] leading-[1.85] max-w-2xl">
-                  {proc.intro}
-                </p>
+                {proc.items.length > 0 && (
+                  <p className="text-white/60 text-[15px] leading-[1.85] max-w-2xl">
+                    {proc.intro}
+                  </p>
+                )}
               </div>
             </div>
           </div>

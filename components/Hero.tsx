@@ -24,12 +24,13 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="relative z-10 font-serif text-[46px] sm:text-[56px] leading-[1.1] font-medium text-white mb-6">
-          Expert in{" "}
-          <em className="text-gold-light" style={{ fontStyle: "italic" }}>
-            Complex
-          </em>
+          Expert in Complex
           <br />
-          Cardiac &amp; Aortic Surgery
+          Cardiac &amp;{" "}
+          <em className="text-gold-light italic font-normal">
+            Aortic
+          </em>{" "}
+          Surgery
         </h1>
 
         {/* Description */}

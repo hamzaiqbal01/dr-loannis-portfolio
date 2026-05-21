@@ -117,12 +117,13 @@ export default function HeroRight3D() {
           </div>
         </div>
 
-        {/* ── Floating badge – bottom left – Weill Cornell ── */}
+        {/* ── Floating badge – bottom left – fellowship ── */}
         <div
-          className="badge-float-down absolute -bottom-5 -left-6 bg-gold text-white rounded-[3px] px-3.5 py-2.5 shadow-[0_8px_24px_rgba(184,150,90,0.45)]"
+          className="badge-float-down absolute -bottom-5 -left-6 bg-gold text-white rounded-[3px] px-3.5 py-2.5 shadow-[0_8px_24px_rgba(184,150,90,0.45)] max-w-[200px]"
         >
-          <div className="text-[8px] tracking-[0.14em] uppercase text-white/70 mb-0.5">Weill Cornell</div>
-          <div className="text-[11px] font-medium text-white leading-none">Fellowship Trained</div>
+          <p className="text-[11px] font-medium text-white leading-snug">
+            Advanced Aortic Surgery Fellowship Trained
+          </p>
         </div>
 
         {/* ── Floating icon – mid right – specialty marker ── */}
