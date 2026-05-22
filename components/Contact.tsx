@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/site-links";
 
 const contactItems = [
   { label: "Phone", value: "407-425-1566", href: "tel:4074251566" },
@@ -83,6 +84,15 @@ export default function Contact() {
                 </div>
                 <div className="text-[13px] text-muted">
                   Available on{" "}
+                  <a
+                    href={GOOGLE_MAPS_REVIEWS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold hover:text-gold-light transition-colors duration-200"
+                  >
+                    Google
+                  </a>
+                  ,{" "}
                   <a
                     href="https://www.healthgrades.com/physician/dr-ioannis-loumiotis-3sh6l"
                     target="_blank"

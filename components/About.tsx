@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function About() {
   return (
@@ -54,11 +55,13 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Floating badge – Board Certified (top right) */}
+              {/* Floating badge – ABTS Board Certified (top right) */}
               <div className="absolute -top-5 -right-5 z-20 bg-gold rounded-[3px] px-3.5 py-2.5 shadow-[0_6px_24px_rgba(184,150,90,0.55)]">
-                <div className="font-serif text-[22px] text-white font-medium leading-none">2×</div>
-                <div className="text-[8px] tracking-[0.14em] uppercase text-white/80 mt-0.5">
-                  Board Certified
+                <div className="leading-none">
+                  <div className="text-[11px] tracking-[0.14em] uppercase font-bold text-white mb-0.5">
+                    ABTS
+                  </div>
+                  <div className="text-[11px] font-medium text-white">Board Certified</div>
                 </div>
               </div>
 
@@ -158,10 +161,17 @@ export default function About() {
               </div>
             </div>
 
+            <div className="mt-2">
+              <p className="text-[11px] tracking-[0.14em] uppercase text-gold font-medium mb-3">
+                Connect
+              </p>
+              <SocialLinks className="mb-8" />
+            </div>
+
             {/* CTA */}
             <Link
               href="/about"
-              className="inline-flex items-center gap-3 mt-2 border border-navy/20 text-navy text-[12px] tracking-widest uppercase font-medium px-6 py-3.5 rounded-[2px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 group"
+              className="inline-flex items-center gap-3 border border-navy/20 text-navy text-[12px] tracking-widest uppercase font-medium px-6 py-3.5 rounded-[2px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 group"
             >
               Learn More About Dr. Loumiotis
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1">

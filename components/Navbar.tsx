@@ -7,10 +7,10 @@ import Link from "next/link";
 const procedureLinks = [
   { label: "Adult Cardiac Surgery",                   href: "/procedures/adult-cardiac-surgery" },
   { label: "Complex Aortic Surgery",                  href: "/procedures/complex-aortic-surgery" },
-  { label: "Aortic Valve Repair & Replacement",       href: "/procedures/complex-aortic-surgery" },
+  { label: "Aortic Valve Repair & Replacement",       href: "/procedures/aortic-valve-repair" },
   { label: "Minimally Invasive Cardiac Surgery",      href: "/procedures/minimally-invasive-cardiac-surgery" },
   { label: "Transcatheter Aortic Valve Replacement",  href: "/procedures/tavr" },
-  { label: "The Ross Procedure",                      href: "/procedures/complex-aortic-surgery" },
+  { label: "The Ross Procedure",                      href: "/procedures/ross-procedure" },
 ];
 
 export default function Navbar() {

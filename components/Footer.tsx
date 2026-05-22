@@ -1,3 +1,5 @@
+import SocialLinks from "@/components/SocialLinks";
+
 export default function Footer() {
   return (
     <footer className="bg-navy text-white/50 py-12 text-center text-[13px]">
@@ -5,6 +7,10 @@ export default function Footer() {
         Dr. Ioannis Loumiotis, MD
       </div>
       <p>Director of Thoracic Aortic Surgery · AdventHealth Orlando</p>
+      <SocialLinks
+        className="justify-center mt-6"
+        iconClassName="text-white/70 border-white/20 hover:text-gold hover:border-gold/40"
+      />
       <p className="mt-4">
         <a
           href="tel:4074251566"

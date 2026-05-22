@@ -4,6 +4,40 @@ import Image from "next/image";
 import { procedures, getProcedure } from "@/lib/procedures-data";
 import type { Metadata } from "next";
 
+function ArticleParagraph({ text }: { text: string }) {
+  const colonIndex = text.indexOf(":");
+  const hasInlineHeading =
+    colonIndex > 0 &&
+    colonIndex < 80 &&
+    text.slice(colonIndex + 1).trim().length > 0;
+
+  if (!hasInlineHeading) {
+    const isSubheading = /factors$/i.test(text.trim());
+
+    if (isSubheading) {
+      return (
+        <h3 className="text-[15px] font-medium text-gold mt-2 mb-0">{text}</h3>
+      );
+    }
+
+    return (
+      <p className="text-[15px] text-muted leading-[1.9]">{text}</p>
+    );
+  }
+
+  const heading = text.slice(0, colonIndex).trim();
+  const body = text.slice(colonIndex + 1).trim();
+
+  return (
+    <p className="text-[15px] text-muted leading-[1.9]">
+      <span className="block text-[14px] font-medium text-gold mb-1">
+        {heading}
+      </span>
+      {body}
+    </p>
+  );
+}
+
 /* ── Static params for pre-rendering ── */
 export function generateStaticParams() {
   return procedures.map((p) => ({ slug: p.slug }));
@@ -76,7 +110,7 @@ export default async function ProcedureDetailPage({
                 <h1 className="font-serif text-[44px] sm:text-[56px] leading-[1.08] font-medium text-white mb-5">
                   {proc.title}
                 </h1>
-                {proc.items.length > 0 && (
+                {proc.items.length > 0 && proc.contentLayout !== "article" && (
                   <p className="text-white/60 text-[15px] leading-[1.85] max-w-2xl">
                     {proc.intro}
                   </p>
@@ -87,7 +121,26 @@ export default async function ProcedureDetailPage({
         </div>
 
         {/* ── Sub-procedures ── */}
-        {proc.items.length > 0 && (
+        {proc.items.length > 0 && proc.contentLayout === "article" && (
+          <div className="bg-cream py-24 px-6">
+            <div className="max-w-[860px] mx-auto px-0 md:px-6 flex flex-col gap-14">
+              {proc.items.map((section) => (
+                <section key={section.name}>
+                  <h2 className="font-serif text-[32px] font-medium text-navy mb-6">
+                    {section.name}
+                  </h2>
+                  <div className="flex flex-col gap-5">
+                    {section.body.split("\n\n").map((paragraph, j) => (
+                      <ArticleParagraph key={j} text={paragraph} />
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {proc.items.length > 0 && proc.contentLayout !== "article" && (
           <div className="bg-cream py-24 px-6">
             <div className="max-w-[1320px] mx-auto px-0 md:px-6">
               <div className="flex items-center gap-2.5 text-[10px] tracking-[0.2em] uppercase text-gold font-medium mb-4">
@@ -99,12 +152,11 @@ export default async function ProcedureDetailPage({
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                {proc.items.map(({ name, body }, i) => (
+                {proc.items.map(({ name, body, fullWidth }, i) => (
                   <div
                     key={name}
-                    className="bg-white border border-navy/10 rounded-[4px] p-7 hover:border-gold hover:shadow-[0_4px_24px_rgba(184,150,90,0.1)] transition-all duration-200 flex flex-col gap-4"
+                    className={`bg-white border border-navy/10 rounded-[4px] p-7 hover:border-gold hover:shadow-[0_4px_24px_rgba(184,150,90,0.1)] transition-all duration-200 flex flex-col gap-4${fullWidth ? " md:col-span-2 xl:col-span-3" : ""}`}
                   >
-                    {/* Index + title */}
                     <div className="flex items-start gap-3">
                       <span className="font-serif text-[22px] text-gold/40 font-medium leading-none shrink-0 mt-0.5">
                         {String(i + 1).padStart(2, "0")}
@@ -113,10 +165,12 @@ export default async function ProcedureDetailPage({
                         {name}
                       </h3>
                     </div>
-                    {/* Divider */}
                     <div className="h-px bg-navy/8 mx-0" />
-                    {/* Body */}
-                    <p className="text-[13px] text-muted leading-[1.85]">{body}</p>
+                    <div className="text-[13px] text-muted leading-[1.85] flex flex-col gap-3">
+                      {body.split("\n\n").map((paragraph, j) => (
+                        <p key={j}>{paragraph}</p>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

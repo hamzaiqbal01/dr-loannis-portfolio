@@ -106,14 +106,15 @@ export default function HeroRight3D() {
           </ul>
         </div>
 
-        {/* ── Floating badge – top right – Board Certified ── */}
+        {/* ── Floating badge – top right – ABTS Board Certified ── */}
         <div
-          className="badge-float-up absolute -top-5 -right-6 bg-navy text-white rounded-[3px] px-3.5 py-2.5 flex items-center gap-2.5 shadow-[0_8px_24px_rgba(11,31,58,0.35)]"
+          className="badge-float-up absolute -top-5 -right-6 bg-navy text-white rounded-[3px] px-3.5 py-2.5 shadow-[0_8px_24px_rgba(11,31,58,0.35)]"
         >
-          <span className="font-serif text-[20px] text-gold-light font-medium leading-none">2×</span>
           <div className="leading-none">
-            <div className="text-[8px] tracking-[0.14em] uppercase text-white/50 mb-0.5">Board</div>
-            <div className="text-[11px] font-medium text-white">Certified</div>
+            <div className="text-[11px] tracking-[0.14em] uppercase font-bold text-white mb-0.5">
+              ABTS
+            </div>
+            <div className="text-[11px] font-medium text-white">Board Certified</div>
           </div>
         </div>
 

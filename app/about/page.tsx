@@ -1,27 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import SocialLinks from "@/components/SocialLinks";
 
 export const metadata: Metadata = {
   title: "About Us – Dr. Ioannis Loumiotis, MD",
   description:
     "Aortic and cardiovascular surgeon at AdventHealth Orlando. Training, board certification, and clinical focus in adult cardiac and complex aortic surgery.",
 };
-
-const social = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ioannis-loumiotis-md",
-  },
-  {
-    label: "X",
-    href: "https://x.com/search?q=Ioannis+Loumiotis+MD+cardiothoracic",
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/cardiacsurgerydoc/",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -63,19 +49,7 @@ export default function AboutPage() {
                 <p className="text-[11px] tracking-[0.14em] uppercase text-gold font-medium mb-3">
                   Connect
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  {social.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center min-w-[88px] px-4 py-2.5 rounded-full bg-white border border-navy/10 text-navy text-[12px] font-medium no-underline shadow-sm hover:border-gold/50 hover:text-gold transition-all duration-200"
-                    >
-                      {s.label}
-                    </a>
-                  ))}
-                </div>
+                <SocialLinks />
               </div>
             </div>
 

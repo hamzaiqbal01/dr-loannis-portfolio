@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { GOOGLE_MAPS_REVIEWS_URL } from "@/lib/site-links";
 
 export const metadata: Metadata = {
   title: "Patient Reviews & Testimonials – Dr. Ioannis Loumiotis, MD",
   description:
-    "Patient reviews on Healthgrades and RateMDs, and a message from Dr. Loumiotis.",
+    "Patient reviews on Google, Healthgrades, and RateMDs, and a message from Dr. Loumiotis.",
 };
 
 export default function PatientTestimonialsPage() {
@@ -22,6 +23,16 @@ export default function PatientTestimonialsPage() {
           <div className="space-y-6 text-[15px] text-muted leading-[1.85] mb-12">
             <p className="text-navy font-medium">Read reviews on:</p>
             <ul className="list-none space-y-3 pl-0">
+              <li>
+                <a
+                  href={GOOGLE_MAPS_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold font-medium no-underline hover:text-navy transition-colors duration-200"
+                >
+                  Read Reviews on Google →
+                </a>
+              </li>
               <li>
                 <a
                   href="https://www.healthgrades.com/physician/dr-ioannis-loumiotis-3sh6l"

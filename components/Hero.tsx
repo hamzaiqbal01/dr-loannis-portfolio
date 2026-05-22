@@ -1,11 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeroRight3D from "./HeroRight3D";
 
-const stats = [
-  { num: "2×", label: "Board Certified" },
-  { num: "CT & GS", label: "Dual Specialties" },
-  { num: "NYC", label: "Weill Cornell Trained" },
-];
+const stats = [{ num: "NYC", label: "Weill Cornell Trained" }];
 
 export default function Hero() {
   return (
@@ -57,7 +54,16 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="relative z-10 flex gap-10 mt-14 pt-8 border-t border-white/10">
+        <div className="relative z-10 flex items-center gap-10 mt-14 pt-8 border-t border-white/10">
+          <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full bg-white ring-1 ring-white/20">
+            <Image
+              src="/American-Board-of-Thoracic-Surgery-logo.png"
+              alt="American Board of Thoracic Surgery"
+              fill
+              className="object-contain p-1.5"
+              sizes="80px"
+            />
+          </div>
           {stats.map(({ num, label }) => (
             <div key={label}>
               <div className="font-serif text-[36px] font-medium text-gold-light leading-none">

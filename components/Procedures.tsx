@@ -12,7 +12,7 @@ const procedures = [
   {
     num: "02",
     name: "Aortic Valve Repair & Replacement",
-    href: "/procedures/complex-aortic-surgery",
+    href: "/procedures/aortic-valve-repair",
     img: "/proc-valve.jpg",
     desc: "Valve-sparing root surgery, bicuspid valve repair, and tailored replacements to restore optimal hemodynamic function.",
   },
@@ -40,7 +40,7 @@ const procedures = [
   {
     num: "06",
     name: "The Ross Procedure",
-    href: "/procedures/complex-aortic-surgery",
+    href: "/procedures/ross-procedure",
     img: "/proc-ross.jpg",
     desc: "A specialized valve replacement using the patient's own pulmonary valve, offering exceptional durability and quality of life.",
   },
