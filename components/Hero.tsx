@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroRight3D from "./HeroRight3D";
 
-const stats = [{ num: "NYC", label: "Albert Einstein/Montefiore Trained" }];
+const stats = [
+  { num: "NYC", labels: ["Weill Cornell Trained", "Albert Einstein / Montefiore Trained"] },
+];
 
 export default function Hero() {
   return (
@@ -64,13 +66,20 @@ export default function Hero() {
               sizes="80px"
             />
           </div>
-          {stats.map(({ num, label }) => (
-            <div key={label}>
+          {stats.map(({ num, labels }) => (
+            <div key={num}>
               <div className="font-serif text-[36px] font-medium text-gold-light leading-none">
                 {num}
               </div>
-              <div className="text-[11px] text-white/50 tracking-[0.08em] uppercase mt-1">
-                {label}
+              <div className="mt-1 space-y-0.5">
+                {labels.map((label) => (
+                  <div
+                    key={label}
+                    className="text-[11px] text-white/50 tracking-[0.08em] uppercase leading-tight"
+                  >
+                    {label}
+                  </div>
+                ))}
               </div>
             </div>
           ))}
