@@ -53,6 +53,16 @@ export default function PatientTestimonialsPage() {
                   Read Reviews on RateMDs →
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.heart-valve-surgery.com/surgeons/dr-Ioannis-Loumiotis-Orlando-Florida.php"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold font-medium no-underline hover:text-navy transition-colors duration-200"
+                >
+                  Read Reviews on HeartValveSurgery.com →
+                </a>
+              </li>
             </ul>
           </div>
 

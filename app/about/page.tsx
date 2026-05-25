@@ -35,7 +35,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 translate-x-2.5 translate-y-2.5 bg-navy rounded-[4px]" />
                 <div className="relative overflow-hidden rounded-[4px] border border-navy/10">
                   <Image
-                    src="/Loumiotis MD.avif"
+                    src="/profile.jpg"
                     alt="Ioannis Loumiotis, MD"
                     width={480}
                     height={620}

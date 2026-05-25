@@ -29,7 +29,7 @@ export default function About() {
               {/* Image */}
               <div className="relative z-10 overflow-hidden rounded-[4px]">
                 <Image
-                  src="/Loumiotis MD.avif"
+                  src="/profile.jpg"
                   alt="Dr. Ioannis Loumiotis, MD — Aortic & Cardiac Surgeon"
                   width={480}
                   height={600}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HeroRight3D from "./HeroRight3D";
 
-const stats = [{ num: "NYC", label: "Weill Cornell Trained" }];
+const stats = [{ num: "NYC", label: "Albert Einstein/Montefiore Trained" }];
 
 export default function Hero() {
   return (
